@@ -1,2 +1,25 @@
 Ubuntu Server 16.04 LTS (HVM), SSD Volume Type - ami-aa2ea6d0
 
+#spin up server as before
+
+#note for logging in, username is different
+ssh -i p.pem ubuntu@<ip>
+
+#stand on giant shoulders with [MSM](https://github.com/msmhq/msm)
+wget -q http://git.io/Sxpr9g -O /tmp/msm && bash /tmp/msm
+
+#install java, otherwise the server won't run and you'll get a helpful message as to why
+sudo apt-get install default-jre
+
+#change default ram to 512. else the server still won't run, but you won't recieve any clue why not and may spend 3 hours troubleshooting
+
+mkdir ~/scripts
+touch ~/scripts/connected.txt
+
+#fetch the user_reports.sh script
+
+#install awscli
+sudo apt install awscli
+
+#set your preferred availability zone
+asw configure

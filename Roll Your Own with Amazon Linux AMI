@@ -1,0 +1,59 @@
+Amazon Linux AMI 2017.09.1 (HVM), SSD Volume Type - ami-55ef662f
+
+Create Keypair if needed
+
+Create IAM role allowing S3 access if needed
+
+//consider fiddling with network accessability
+
+Spin up t2.micro instance allowing TCP on 25565 via AWS GUI
+
+ssh -i <key>.pem ec2-user@<ip>
+
+//optional sudo yum update
+
+wget
+https://s3.amazonaws.com/Minecraft.Download/versions/1.12.2/minecraft_server.1.12.2.jar
+
+ln -s minecraft_server.1.12.2.jar server.jar
+
+sudo yum install java-1.8.0
+
+sudo yum remove java-1.7.0-openjdk
+
+sudo java -Xmx1024M -jar server.jar nogui
+
+accept EULA after reading and change false to true in eula.txt
+
+screen -S myScreen
+
+sudo java -Xmx1024M -jar server.jar nogui
+
+<ctrl+a><d>
+
+//log into mincraft server using mojang account
+
+screen -S myScreen -X stuff "say test $(printf \\r)"
+
+screen -S myScreen -X stuff "save-off $(printf \\r)"
+
+screen -S myScreen -X stuff "save-all $(printf \\r)"
+
+lsblk
+
+mkdir backup-volume
+
+sudo mkfs -t ext4 /dev/xvdf1
+
+sudo mount /dev/xvdf1 ~/minecraft/backup-volume
+
+sudo chown ec2-user ../backup-volume/
+
+cp -r world ../backup-volume/
+
+//created SNS topic, <arn>
+//created subsription and confirmed, 
+
+aws sns publish --topic-arn <arn> --message "testing minecraft notification"
+
+aws sns publish --topic-arn <arn> --message file://latest.log

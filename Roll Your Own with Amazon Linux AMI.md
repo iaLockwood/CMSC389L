@@ -47,22 +47,23 @@ screen -S myScreen -X stuff "say test $(printf \\r)"
 
 #attached EBS volume using aws gui
 
+#view your available storage
 lsblk
 
+#make a place and mount
 mkdir backup-volume
-
 sudo mkfs -t ext4 /dev/xvdf1
-
 sudo mount /dev/xvdf1 ~/minecraft/backup-volume
-
 sudo chown ec2-user ../backup-volume/
 
+#the server is usually saving continuously, in order to prevent corruption for our backup we do the following
 screen -S myScreen -X stuff "save-off $(printf \\r)"
-
 screen -S myScreen -X stuff "save-all $(printf \\r)"
 
+#copy to a persitent place
 cp -r world ../backup-volume/
 
+#allow autosave to continue
 screen -S myScreen -X stuff "save-on $(printf \\r)"
 
 #create SNS topic via aws gui, save <arn>

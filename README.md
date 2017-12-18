@@ -39,16 +39,25 @@ User login notification [demo](https://www.useloom.com/share/e5bf710811da489ea67
 Server in [action](https://www.useloom.com/share/e5bf710811da489ea673d0e11377e78d) part two, electric boogaloo
 
 ## Problems and Solutions
-Problem: promising resource (1) stopped publishing half-way a year ago Solution:
-more research!
+Problem: promising resource (1) stopped publishing half-way a year ago 
+Solution: more research!
 
-Problem: minecraft_server.1.12 throws exception on AMI Linux t2.micro Solution:
-remove java 1.7 from instance and install 1.8
+Problem: minecraft_server.1.12 throws exception on AMI Linux t2.micro 
+Solution: remove java 1.7 from instance and install 1.8
 
 Problem in disguise: “there’s someone who wrote a blog that fills in some gaps
 from the unpublished first one. Cool! ... wait ... that makes this project feel
-kind of derivative, which isn’t really the point” Solution: Draw on various resources to make something greater than the sum of
+kind of derivative, which isn’t really the point” 
+Solution: Draw on various resources to make something greater than the sum of
 its parts. That’s what programming is. Right?
 
 Problem: t2.micro won’t work ‘out of the box’ with Mincraft Server Manager
+Workaround Solution: roll your own
+Second Solution: find out later you the installation script are built for ubuntu (they use apt-get instead of yum) and so you can resolve this by using an ubuntu ami
+
+Problem: msm, once installed, hangs when starting a server; and demands java
+Soulution: install java
+
+Problem: msm still hangs when starting a server, but has no friendly messages. After much trial and error you find the instance is running out of ram. This is unexpected because you used same default as when you rolled your own, and it worked.
+Solution: Cut default ram used by minecraft server to 512 down from 1024. In hindsight this makes sense as MSM has some overhead.
 

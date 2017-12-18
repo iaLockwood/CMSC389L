@@ -1,6 +1,11 @@
 # CMSC389L
-## Goal:
+## Goal
 Gain experience with AWS by hosting a minecraft server
+
+## What's here
+Part 1: Procedute for setting up your own server on ami-55ef662f, maintaining the use of your command line while the server is up using linux screen, manual backups to EBS
+Part 2: Procedure for using [MSM](https://github.com/msmhq/msm) on a t2.micro with an Ubuntu Server image, customizable script for pushing logs to the admin via SNS, plugging that script into a cron job
+Part 3: No project would be comeplete without a placeholder for what you'd like to complete but didn't get to
 
 
 ## Services Used

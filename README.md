@@ -5,10 +5,15 @@ Gain experience with AWS by hosting a minecraft server
 
 ## Services Used
 EC2 - host server
+
 EIP - one ip for users to know
+
 SNS - push logs to admin upon user login
+
 EBS - quick backups
+
 S3 - optional long-term storage
+
 IAM - manage access
 
 

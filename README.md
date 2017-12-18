@@ -1,6 +1,11 @@
 # CMSC389L
 ## An excuse to play with minecraft under the guise of learning AWS
 
+
+## AWS Architecture Diagram
+![alt text](https://github.com/iaLockwood/CMSC389L/blob/master/architecture%20.pdf)
+
+
 [high level intro](https://www.useloom.com/share/1a80855a063b493690215ea836aa9151)
 
 
